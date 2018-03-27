@@ -2,45 +2,117 @@
 <body>
 
 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1252"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 5.3.6.1 (Windows)"/>
+	<meta name="created" content="2018-03-27T13:47:35.251000000"/>
+	<meta name="changed" content="2018-03-27T13:47:52.112000000"/>
+	<style type="text/css">
+		@page { margin: 0.79in }
+		p { margin-bottom: 0.1in; line-height: 120% }
+	</style>
+</head>
+<body lang="en-US" dir="ltr">
+<p style="margin-bottom: 0in; line-height: 100%">Estimating the Hurst
+exponent</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
 
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">The Hurst exponent
+is not so much calculated as it is estimated. A variety of techniques
+exist for estimating the Hurst exponent (H) and the process detailed
+here is both simple and highly data intensive.</p>
+<p style="margin-bottom: 0in; line-height: 100%">To estimate the
+Hurst exponent one must regress the rescaled range on the time span
+of observations.</p>
+<p style="margin-bottom: 0in; line-height: 100%">To do this, a time
+series of full length is divided into a number of shorter time series
+and the rescaled range is calculated for each of the smaller time
+series.</p>
+<p style="margin-bottom: 0in; line-height: 100%">A minimum length of
+eight is usually chosen for the length of the smallest time series.
+So, for example, if a time series has 128 observations it is divided
+into:</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
 
-Estimating the Hurst exponent
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">    two chunks of 64
+observations each</p>
+<p style="margin-bottom: 0in; line-height: 100%">    four chunks of
+32 observations each</p>
+<p style="margin-bottom: 0in; line-height: 100%">    eight chunks of
+16 observations each</p>
+<p style="margin-bottom: 0in; line-height: 100%">    16 chunks of
+eight observations each</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
 
-The Hurst exponent is not so much calculated as it is estimated. A variety of techniques exist for estimating the Hurst exponent (H) and the process detailed here is both simple and highly data intensive.
-To estimate the Hurst exponent one must regress the rescaled range on the time span of observations.
-To do this, a time series of full length is divided into a number of shorter time series and the rescaled range is calculated for each of the smaller time series.
-A minimum length of eight is usually chosen for the length of the smallest time series. So, for example, if a time series has 128 observations it is divided into:
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
 
-    two chunks of 64 observations each
-    four chunks of 32 observations each
-    eight chunks of 16 observations each
-    16 chunks of eight observations each
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">	</p>
+<p style="margin-bottom: 0in; line-height: 100%">	</p>
+<p style="margin-bottom: 0in; line-height: 100%">Steps for estimating
+the Hurst exponent after breaking the time series into chunks:</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
 
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">For each chunk of
+observations, compute:</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
 
-	
-	
-Steps for estimating the Hurst exponent after breaking the time series into chunks:
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">    the mean of the
+time series,</p>
+<p style="margin-bottom: 0in; line-height: 100%">    a mean centered
+series by subtracting the mean from the series,</p>
+<p style="margin-bottom: 0in; line-height: 100%">    the cumulative
+deviation of the series from the mean by summing up the mean centered
+values,</p>
+<p style="margin-bottom: 0in; line-height: 100%">    the Range (R),
+which is the difference between the maximum value of the cumulative
+deviation and the minimum value of the cumulative deviation,</p>
+<p style="margin-bottom: 0in; line-height: 100%">    the standard
+deviation (S) of the mean centered values, and</p>
+<p style="margin-bottom: 0in; line-height: 100%">    the rescaled
+range by dividing the Range by the standard deviation.</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
 
-For each chunk of observations, compute:
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">Finally, average the
+rescaled range over all the chunks.</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
 
-    the mean of the time series,
-    a mean centered series by subtracting the mean from the series,
-    the cumulative deviation of the series from the mean by summing up the mean centered values,
-    the Range (R), which is the difference between the maximum value of the cumulative deviation and the minimum value of the cumulative deviation,
-    the standard deviation (S) of the mean centered values, and
-    the rescaled range by dividing the Range by the standard deviation.
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">The rescaled range
+and chunk size follows a power law, and the Hurst exponent is given
+by the exponent of this power law.</p>
+<p style="margin-bottom: 0in; line-height: 100%">When the frequency
+of an event varies as the power of some quantity associated with the
+event, it is said to follow a power law.</p>
+<p style="margin-bottom: 0in; line-height: 100%">A wide variety of
+natural and manmade phenomena follow a power law.</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
 
-Finally, average the rescaled range over all the chunks.
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
 
-The rescaled range and chunk size follows a power law, and the Hurst exponent is given by the exponent of this power law.
-When the frequency of an event varies as the power of some quantity associated with the event, it is said to follow a power law.
-A wide variety of natural and manmade phenomena follow a power law.
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
 
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
 
-
-
-For example, the 80/20 rule (20 percent of the population holds 80 percent of wealth), the winner-take-all phenomenon, friend connections in a social network and forest fires all follow power laws.
-
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">For example, the
+80/20 rule (20 percent of the population holds 80 percent of wealth),
+the winner-take-all phenomenon, friend connections in a social
+network and forest fires all follow power laws.</p>
+</body>
+</html>
 
 
 
