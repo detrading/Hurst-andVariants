@@ -62,17 +62,40 @@ $range[2]  = partition($vals, 4);
 $range[3]  = partition($vals, 8);
 $range[4]  = partition($vals, 16);
 $range[5]  = partition($vals, 32);
-$range[6]  = partition($vals, 64);
+//$range[6]  = partition($vals, 64);
+
+
+
+
+echo '<BR>', '<BR>';
 
 foreach ($range as $indrange){
-	
+	//  123456
 	foreach (  $indrange as $arraypart ){
-		
+		// 2 4 8 16 32 64
 		$m = simpleAverage($arraypart);
-		echo  $m, PHP_EOL;
+		$sd = stdDev($arraypart);
+		//$sd = stdDev($arraypart);
+		$deviations = array();
+		$absdeviations = array();
+			foreach ($arraypart as $part){
+				//Create a series which is the running total of the deviations from the mean.  Now that you have a series of deviations from the mean for each range, you need to calculate a running total for each range’s deviations from the mean.
+				$absdeviations[] = abs($part - $m);
+				$deviations[] = $part - $m;
+			}
+			
+		echo   $m, ' , ', $sd, '<br>';
+		$sumofdeviations = array_sum($absdeviations);
+		//$maxdev = max($deviations);
+		//$mindev = min($deviations);
+		$widediff = max($deviations) - min($deviations);
+		
+		
+	echo ' | ', 'WIDEST DIFFERENCE', $widediff;
 	}
-	
-	echo 'Z', '<BR>', '<BR>';
+	echo ' <BR>| ', 'sumofdeviations',  $sumofdeviations;
+		echo '<BR><BR>';
+	//echo ' | ', 'rescaled range', $rr, '<BR><BR><BR>';
 }
 
 
